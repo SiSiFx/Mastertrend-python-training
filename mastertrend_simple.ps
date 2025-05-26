@@ -1,0 +1,57 @@
+//@version=5
+indicator("MTS_Simple", shorttitle="MTS_S", overlay=true)
+
+// === Inputs ===
+atrLen = input.int(10, "ATR Length")
+mult = input.float(3.0, "ATR Multiplier")
+startTime = input.session("0930-1600:1234567", "Trading Hours")
+maxTrades = input.int(10, "Max trades to display", minval=1)
+
+// === SuperTrend Calculation ===
+src = hl2
+atr = ta.atr(atrLen)
+basicUp = src - mult * atr
+basicDn = src + mult * atr
+var float fUp = na
+var float fDn = na
+fUp := close[1] > nz(fUp[1]) ? math.max(basicUp, nz(fUp[1])) : basicUp
+fDn := close[1] < nz(fDn[1]) ? math.min(basicDn, nz(fDn[1])) : basicDn
+var int trend = 1
+trend := nz(trend[1], 1)
+trend := (trend == -1 and close > fDn[1]) ? 1 : (trend == 1 and close < fUp[1]) ? -1 : trend
+
+// === Signals & Time Filter ===
+buySignal = trend == 1 and trend[1] == -1
+sellSignal = trend == -1 and trend[1] == 1
+inSession = not na(time(timeframe.period, startTime))
+validBuy = buySignal and inSession
+validSell = sellSignal and inSession
+
+// === Tables ===
+var table tTrades = table.new(position.top_left, 3, maxTrades + 1, frame_color=color.gray)
+var array<int> times = array.new_int()
+var array<string> sides = array.new_string()
+
+if validBuy or validSell
+    array.unshift(times, time)
+    array.unshift(sides, validBuy ? "BUY" : "SELL")
+    if array.size(times) > maxTrades
+        array.pop(times)
+        array.pop(sides)
+
+if barstate.islast
+    table.cell(tTrades, 0, 0, "Idx", text_color=color.white, bgcolor=color.blue)
+    table.cell(tTrades, 1, 0, "Time", text_color=color.white, bgcolor=color.blue)
+    table.cell(tTrades, 2, 0, "Side", text_color=color.white, bgcolor=color.blue)
+    for i = 0 to maxTrades - 1
+        if i < array.size(times)
+            tVal = array.get(times, i)
+            sVal = array.get(sides, i)
+            ts = tostring(tVal, "yyyy-MM-dd HH:mm")
+            table.cell(tTrades, 0, i+1, str.tostring(i+1), text_color=color.green)
+            table.cell(tTrades, 1, i+1, ts, text_color=color.white)
+            table.cell(tTrades, 2, i+1, sVal, text_color=sVal == "BUY" ? color.green : color.red)
+        else
+            table.cell(tTrades, 0, i+1, "")
+            table.cell(tTrades, 1, i+1, "")
+            table.cell(tTrades, 2, i+1, "") 
