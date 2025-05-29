@@ -1,0 +1,162 @@
+[
+  {
+    "pair": "EUR_USD",
+    "timeframe": "15min",
+    "best_params": {
+      "position_size": 0.12648254342574988,
+      "signal_threshold": 0.8994966858103007
+    },
+    "best_results": {
+      "total_return": 0.007215829102438874,
+      "max_drawdown": 0.01154443612044929,
+      "total_trades": 6,
+      "win_rate": 0.5,
+      "prop_firm_pass": "False",
+      "final_capital": 100721.58291024389,
+      "meets_profit_target": "False",
+      "meets_drawdown": "True",
+      "meets_daily_limit": "True"
+    },
+    "best_fitness": -1000
+  },
+  {
+    "pair": "GBP_USD",
+    "timeframe": "15min",
+    "best_params": {
+      "position_size": 0.05373411656324093,
+      "signal_threshold": 0.6940393535467521
+    },
+    "best_results": {
+      "total_return": -0.0005470133066138078,
+      "max_drawdown": 0.005206402658608335,
+      "total_trades": 4,
+      "win_rate": 0.5,
+      "prop_firm_pass": "False",
+      "final_capital": 99945.29866933862,
+      "meets_profit_target": "False",
+      "meets_drawdown": "True",
+      "meets_daily_limit": "True"
+    },
+    "best_fitness": -1000
+  },
+  {
+    "pair": "USD_JPY",
+    "timeframe": "15min",
+    "best_params": {
+      "position_size": 0.12452890212205629,
+      "signal_threshold": 0.7254563180452389
+    },
+    "best_results": {
+      "total_return": -0.7019227229237315,
+      "max_drawdown": 1.224663917276518,
+      "total_trades": 5,
+      "win_rate": 0.4,
+      "prop_firm_pass": "False",
+      "final_capital": 29807.727707626847,
+      "meets_profit_target": "False",
+      "meets_drawdown": "False",
+      "meets_daily_limit": "False"
+    },
+    "best_fitness": -1000
+  },
+  {
+    "pair": "AUD_USD",
+    "timeframe": "15min",
+    "best_params": {
+      "position_size": 0.10126173542461901,
+      "signal_threshold": 0.8245420418642192
+    },
+    "best_results": {
+      "total_return": 0.005505094246359513,
+      "max_drawdown": 0.004727529617695287,
+      "total_trades": 5,
+      "win_rate": 0.8,
+      "prop_firm_pass": "False",
+      "final_capital": 100550.50942463595,
+      "meets_profit_target": "False",
+      "meets_drawdown": "True",
+      "meets_daily_limit": "True"
+    },
+    "best_fitness": -1000
+  },
+  {
+    "pair": "EUR_JPY",
+    "timeframe": "15min",
+    "best_params": {
+      "position_size": 0.11599103215653113,
+      "signal_threshold": 0.6596050547844277
+    },
+    "best_results": {
+      "total_return": 0.28746985427611393,
+      "max_drawdown": 0.8807762174014531,
+      "total_trades": 4,
+      "win_rate": 0.75,
+      "prop_firm_pass": "False",
+      "final_capital": 128746.98542761139,
+      "meets_profit_target": "True",
+      "meets_drawdown": "False",
+      "meets_daily_limit": "False"
+    },
+    "best_fitness": -1000
+  },
+  {
+    "pair": "GBP_JPY",
+    "timeframe": "15min",
+    "best_params": {
+      "position_size": 0.14779560134226394,
+      "signal_threshold": 0.8438943928809295
+    },
+    "best_results": {
+      "total_return": -0.13852733918209617,
+      "max_drawdown": 1.2214935170228662,
+      "total_trades": 6,
+      "win_rate": 0.3333333333333333,
+      "prop_firm_pass": "False",
+      "final_capital": 86147.26608179038,
+      "meets_profit_target": "False",
+      "meets_drawdown": "False",
+      "meets_daily_limit": "False"
+    },
+    "best_fitness": -1000
+  },
+  {
+    "pair": "EUR_USD",
+    "timeframe": "1hour",
+    "best_params": {
+      "position_size": 0.10966189859134655,
+      "signal_threshold": 0.8073194762748155
+    },
+    "best_results": {
+      "total_return": 0.01615593920997009,
+      "max_drawdown": 0.0073842030714382275,
+      "total_trades": 5,
+      "win_rate": 1.0,
+      "prop_firm_pass": "False",
+      "final_capital": 101615.59392099701,
+      "meets_profit_target": "False",
+      "meets_drawdown": "True",
+      "meets_daily_limit": true
+    },
+    "best_fitness": -1000
+  },
+  {
+    "pair": "GBP_USD",
+    "timeframe": "1hour",
+    "best_params": {
+      "position_size": 0.12780404556396346,
+      "signal_threshold": 0.7568525468744172
+    },
+    "best_results": {
+      "total_return": -0.0033586903174209876,
+      "max_drawdown": 0.016876814459738328,
+      "total_trades": 4,
+      "win_rate": 0.5,
+      "prop_firm_pass": "False",
+      "final_capital": 99664.1309682579,
+      "meets_profit_target": "False",
+      "meets_drawdown": "True",
+      "meets_daily_limit": "True"
+    },
+    "best_fitness": -1000
+  }
+]
